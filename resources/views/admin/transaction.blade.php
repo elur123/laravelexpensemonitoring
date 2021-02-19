@@ -8,7 +8,7 @@
             <h5 class="card-title mt-4 mb-2">Paid</h5>
             <p class="card-text text-mute">Total Amount : {{ $stats['paid_user1'] + $stats['paid_user2'] }}</p>
         </div>
-        <div class="card-body bg-dark text-white">
+        <div class="card-body bg-success text-white">
             <div class="ul-widget-card__info"><span>
                     <p>{{ $stats['paid_user1'] }}</p>
                     <p class="text-mute">User 1</p>
@@ -25,7 +25,7 @@
             <h5 class="card-title mt-4 mb-2">Credit</h5>
             <p class="card-text text-mute">Total Amount: {{ $stats['credit_user1'] + $stats['credit_user2'] }}</p>
         </div>
-        <div class="card-body bg-dark text-white">
+        <div class="card-body bg-danger text-white">
             <div class="ul-widget-card__info"><span>
                     <p>{{ $stats['credit_user1'] }}</p>
                     <p class="text-mute">User 1</p>
@@ -50,7 +50,7 @@
           </div>
           <br>
           <div class="box-body table-responsive">
-              <table id="example1" class="table table-bordered">
+              <table id="zero_configuration_table" class="table table-bordered">
                   <thead>
 
                       <th>User</th>
@@ -77,7 +77,7 @@
                           <td>{{$transaction->price}}</td>
                           <td>{{$transaction->unit}}</td>
                           <td>{{$transaction->total}}</td>
-                          <td>{{$transaction->status}}</td>
+                          <td> <span class="badge {{ $transaction->status == 'Active' ? "badge-success" : "badge-danger" }}"> {{$transaction->status == 'Active' ? "Paid" : "Unpaid"}} </span></td>
                           <td>{{$transaction->paids->name}}</td>
                           <td>{{$transaction->method}}</td>
                           <td>

@@ -9,7 +9,7 @@
                 <br><br>
             </div>
             <div class="box-body">
-                <table id="example1" class="table table-bordered">
+                <table id="zero_configuration_table" class="table table-bordered">
                     <thead>
                         <th>Supplier ID</th>
                         <th>Supplier Name</th>

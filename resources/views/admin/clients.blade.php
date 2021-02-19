@@ -7,7 +7,7 @@
             <div class="card-header">
                 <h5 class="card-title mt-4 mb-2">User 1</h5>
                 <p class="card-text text-mute">
-                    <span class="float-left">Total Pending : {{ $stats['user_pending1'] }}</span>
+                    <span class="float-left">Total Unpaid : {{ $stats['user_pending1'] }}</span>
                     <span class="float-right">Total Paid : {{ $stats['user_paid1'] }}</span>
                 </p>
             </div>
@@ -34,7 +34,7 @@
             <div class="card-header">
                 <h5 class="card-title mt-4 mb-2">User 2</h5>
                 <p class="card-text text-mute">
-                    <span class="float-left">Total Pending : {{ $stats['user_pending2'] }}</span>
+                    <span class="float-left">Total Unpaid : {{ $stats['user_pending2'] }}</span>
                     <span class="float-right">Total Paid : {{ $stats['user_paid2'] }}</span>
                 </p>
             </div>
@@ -100,7 +100,7 @@
         </div>
         <br>
         <div class="box-body">
-            <table id="example1" class="table table-bordered">
+            <table id="zero_configuration_table" class="table table-bordered">
                 <thead>
 
                     <th>User</th>
@@ -127,7 +127,7 @@
                         <td>{{$client->price}}</td>
                         <td>{{$client->unit}}</td>
                         <td>{{$client->total}}</td>
-                        <td>{{$client->status}}</td>
+                        <td><span class="badge {{ $client->status == 'Active' ? "badge-success" : "badge-danger" }}"> {{$client->status == 'Active' ? "Paid" : "Unpaid"}} </span></td>
                         <td>{{$client->paids->name}}</td>
                         <td>{{$client->method}}</td>
                         <td>
